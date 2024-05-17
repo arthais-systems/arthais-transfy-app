@@ -12,9 +12,9 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/VehicleTab';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
-import Tab4 from './pages/Tab4';
+import Tab2 from './pages/DriversTab';
+import Tab3 from './pages/HistoricTab';
+import Tab4 from './pages/FinancialTab';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -56,13 +56,13 @@ const App: React.FC = () => (
           <Route exact path="/vehicles">
             <Tab1 />
           </Route>
-          <Route exact path="/tab2">
+          <Route exact path="/drivers">
             <Tab2 />
           </Route>
-          <Route exact path="/tab3">
+          <Route exact path="/historic">
             <Tab3 />
           </Route>
-          <Route exact path="/tab4">
+          <Route exact path="/financial">
             <Tab4 />
           </Route>
           <Route exact path="/">
@@ -74,15 +74,15 @@ const App: React.FC = () => (
             <IonIcon aria-hidden="true" icon={triangle} />
             <IonLabel>Vehicles</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="drivers" href="/drivers">
             <IonIcon aria-hidden="true" icon={ellipse} />
             <IonLabel>Drivers</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
+          <IonTabButton tab="historic" href="/historic">
             <IonIcon aria-hidden="true" icon={square} />
             <IonLabel>Historic</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab4" href="/tab4">
+          <IonTabButton tab="financial" href="/financial">
             <IonIcon aria-hidden="true" icon={square} />
             <IonLabel>Financial</IonLabel>
           </IonTabButton>

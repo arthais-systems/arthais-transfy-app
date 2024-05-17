@@ -10,11 +10,11 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/VehicleTab';
-import Tab2 from './pages/DriversTab';
-import Tab3 from './pages/HistoricTab';
-import Tab4 from './pages/FinancialTab';
+import { carOutline, manOutline, timeOutline, cardOutline } from 'ionicons/icons';
+import VehicleTab from './pages/VehicleTab';
+import ChauffeurTab from './pages/ChauffeurTab';
+import HistoricTab from './pages/HistoricTab';
+import FinancialTab from './pages/FinancialTab';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -54,36 +54,36 @@ const App: React.FC = () => (
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/vehicles">
-            <Tab1 />
+            <VehicleTab />
           </Route>
-          <Route exact path="/drivers">
-            <Tab2 />
+          <Route exact path="/chauffeurs">
+            <ChauffeurTab />
           </Route>
           <Route exact path="/historic">
-            <Tab3 />
+            <HistoricTab />
           </Route>
           <Route exact path="/financial">
-            <Tab4 />
+            <FinancialTab />
           </Route>
           <Route exact path="/">
             <Redirect to="/vehicles" />
           </Route>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="bottom" className="custom-tab-bar">
           <IonTabButton tab="vehicles" href="/vehicles">
-            <IonIcon aria-hidden="true" icon={triangle} />
+            <IonIcon aria-hidden="true" icon={carOutline} />
             <IonLabel>Vehicles</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="drivers" href="/drivers">
-            <IonIcon aria-hidden="true" icon={ellipse} />
-            <IonLabel>Drivers</IonLabel>
+          <IonTabButton tab="chauffeurs" href="/chauffeurs">
+            <IonIcon aria-hidden="true" icon={manOutline} />
+            <IonLabel>Chauffeurs</IonLabel>
           </IonTabButton>
           <IonTabButton tab="historic" href="/historic">
-            <IonIcon aria-hidden="true" icon={square} />
+            <IonIcon aria-hidden="true" icon={timeOutline} />
             <IonLabel>Historic</IonLabel>
           </IonTabButton>
           <IonTabButton tab="financial" href="/financial">
-            <IonIcon aria-hidden="true" icon={square} />
+            <IonIcon aria-hidden="true" icon={cardOutline} />
             <IonLabel>Financial</IonLabel>
           </IonTabButton>
         </IonTabBar>

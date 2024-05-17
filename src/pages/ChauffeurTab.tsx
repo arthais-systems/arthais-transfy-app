@@ -1,25 +1,25 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './DriversTab.css';
+import './ChauffeurTab.css';
 
-const DriversTab: React.FC = () => {
+const ChauffeurTab: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Drivers</IonTitle>
+          <IonTitle>Chauffeurs</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Drivers</IonTitle>
+            <IonTitle size="large">Chauffeurs</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Drivers page" />
+        <ExploreContainer name="Chauffeurs page" />
       </IonContent>
     </IonPage>
   );
 };
 
-export default DriversTab;
+export default ChauffeurTab;

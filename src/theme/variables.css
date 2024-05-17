@@ -1,2 +1,26 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+/* Adicione isso no seu arquivo CSS */
+
+.custom-tab-bar {
+    height: 70px; /* Ajuste essa altura conforme necessário */
+    --ion-tab-bar-height: 70px;
+  }
+  
+  .custom-tab-bar ion-tab-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .custom-tab-bar ion-icon {
+    font-size: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-bottom: 4px; /* Ajuste a margem conforme necessário */
+  }
+  
+  .custom-tab-bar ion-label {
+    font-size: 12px; /* Ajuste o tamanho do texto conforme necessário */
+  }
+  

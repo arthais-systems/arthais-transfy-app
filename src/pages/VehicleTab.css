@@ -1,0 +1,20 @@
+/* VehicleTab.css */
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .custom-button {
+    flex: 1;
+    margin: 0 5px;
+    font-size: 18px;
+    padding: 10px;
+    --background: #008080; /* Cor teal */
+    --background-hover: #00a0a0; /* Cor teal mais clara para hover */
+    --background-activated: #004d4d; /* Cor teal mais escura para ativo */
+    --color: white;
+    --border-radius: 10px;
+  }
+  

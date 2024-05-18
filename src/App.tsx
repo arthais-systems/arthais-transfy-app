@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -48,48 +49,76 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/vehicles">
-            <VehicleTab />
-          </Route>
-          <Route exact path="/chauffeurs">
-            <ChauffeurTab />
-          </Route>
-          <Route exact path="/historic">
-            <HistoricTab />
-          </Route>
-          <Route exact path="/financial">
-            <FinancialTab />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/vehicles" />
-          </Route>
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom" className="custom-tab-bar">
-          <IonTabButton tab="vehicles" href="/vehicles">
-            <IonIcon aria-hidden="true" icon={carOutline} />
-            <IonLabel>Vehicles</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="chauffeurs" href="/chauffeurs">
-            <IonIcon aria-hidden="true" icon={manOutline} />
-            <IonLabel>Chauffeurs</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="historic" href="/historic">
-            <IonIcon aria-hidden="true" icon={timeOutline} />
-            <IonLabel>Historic</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="financial" href="/financial">
-            <IonIcon aria-hidden="true" icon={cardOutline} />
-            <IonLabel>Financial</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  const [selectedTab, setSelectedTab] = useState('vehicles');
+
+  const handleTabClick = (tab: string) => {
+    setSelectedTab(tab);
+  };
+
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet>
+            <Route exact path="/vehicles">
+              <VehicleTab />
+            </Route>
+            <Route exact path="/chauffeurs">
+              <ChauffeurTab />
+            </Route>
+            <Route exact path="/historic">
+              <HistoricTab />
+            </Route>
+            <Route exact path="/financial">
+              <FinancialTab />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/vehicles" />
+            </Route>
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom" className="custom-tab-bar">
+            <IonTabButton 
+              tab="vehicles" 
+              href="/vehicles" 
+              className={selectedTab === 'vehicles' ? 'ion-selected' : ''} 
+              onClick={() => handleTabClick('vehicles')}
+            >
+              <IonIcon aria-hidden="true" icon={carOutline} />
+              <IonLabel>Vehicles</IonLabel>
+            </IonTabButton>
+            <IonTabButton 
+              tab="chauffeurs" 
+              href="/chauffeurs" 
+              className={selectedTab === 'chauffeurs' ? 'ion-selected' : ''} 
+              onClick={() => handleTabClick('chauffeurs')}
+            >
+              <IonIcon aria-hidden="true" icon={manOutline} />
+              <IonLabel>Chauffeurs</IonLabel>
+            </IonTabButton>
+            <IonTabButton 
+              tab="historic" 
+              href="/historic" 
+              className={selectedTab === 'historic' ? 'ion-selected' : ''} 
+              onClick={() => handleTabClick('historic')}
+            >
+              <IonIcon aria-hidden="true" icon={timeOutline} />
+              <IonLabel>Historic</IonLabel>
+            </IonTabButton>
+            <IonTabButton 
+              tab="financial" 
+              href="/financial" 
+              className={selectedTab === 'financial' ? 'ion-selected' : ''} 
+              onClick={() => handleTabClick('financial')}
+            >
+              <IonIcon aria-hidden="true" icon={cardOutline} />
+              <IonLabel>Financial</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;
